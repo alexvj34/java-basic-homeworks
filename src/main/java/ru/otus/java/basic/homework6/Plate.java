@@ -10,12 +10,7 @@ public class Plate {
     }
 
     public void addFood(int food) {
-        int result = this.currentFood + food;
-        if (result > this.maxFood) {
-            this.currentFood = this.maxFood;
-        } else {
-            this.currentFood = result;
-        }
+        this.currentFood = Math.min(this.currentFood + food, this.maxFood);
 
     }
 

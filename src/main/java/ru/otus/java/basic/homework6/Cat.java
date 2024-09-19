@@ -1,9 +1,9 @@
 package ru.otus.java.basic.homework6;
 
 public class Cat {
-    String name;
-    int appetite;
-    boolean satiety;
+    private String name;
+    private int appetite;
+    private boolean satiety;
 
 
     public Cat(String name, int appetite) {
@@ -14,8 +14,10 @@ public class Cat {
 
     public void eat(Plate plate) {
         if (satiety) {
-            System.out.println("Кот не голоден");
-        } else if (plate.removeFood(appetite)) {
+            System.out.println(name + " не голоден");
+            return;
+        }
+        if (plate.removeFood(appetite)) {
             satiety = true;
             System.out.println(name + " поел");
         } else {
