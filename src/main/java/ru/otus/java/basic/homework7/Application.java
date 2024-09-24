@@ -3,13 +3,14 @@ package ru.otus.java.basic.homework7;
 import ru.otus.java.basic.homework7.terrain.Terrain;
 import ru.otus.java.basic.homework7.transport.*;
 
+import java.util.List;
+
 public class Application {
     public static void main(String[] args) {
         Human human1 = new Human("Alla Allovna");
 
-        Moveable[] transports = {
-                new Car(100), new AllTerrainVehicle(200), new Horse(80), new Bicycle()
-        };
+        List<Moveable> transports = List.of(new Car(100), new AllTerrainVehicle(200), new Horse(80), new Bicycle());
+
 
         for (Moveable transport : transports) {
             human1.sitDown(transport);

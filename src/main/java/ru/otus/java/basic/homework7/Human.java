@@ -23,15 +23,12 @@ public class Human implements Moveable {
 
     @Override
     public boolean move(Terrain terrain, int distance) {
-        if (currentTransport != null) {
-            if (currentTransport.move(terrain, distance)) {
-                System.out.println(name + " проехала на транспорте");
-            } else {
-                System.out.println(name + " никуда не поехала");
-            }
+        if (currentTransport != null && currentTransport.move(terrain, distance)) {
+            System.out.println(name + " проехала на транспорте");
+            return true;
         } else {
-            System.out.println(name + " идёт пешком");
+            System.out.println(currentTransport != null ? name + " никуда не поехала" : name + " идёт пешком");
+            return false;
         }
-        return false;
     }
 }

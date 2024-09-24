@@ -5,7 +5,7 @@ import ru.otus.java.basic.homework7.terrain.Terrain;
 import java.util.List;
 
 public class Horse implements Moveable {
-    private final List<Terrain> availableTerrain = List.of(Terrain.PLAIN, Terrain.FORREST);
+    private static final List<Terrain> AVAILABLE_TERRAIN = List.of(Terrain.PLAIN, Terrain.FORREST);
     private int strength;
 
     public Horse(int strength) {
@@ -14,7 +14,7 @@ public class Horse implements Moveable {
 
     @Override
     public boolean move(Terrain terrain, int distance) {
-        if (availableTerrain.contains(terrain)) {
+        if (AVAILABLE_TERRAIN.contains(terrain)) {
             if (distance > this.strength) {
                 System.out.println("У лошади не хватило сил");
                 return false;
