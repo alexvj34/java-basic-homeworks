@@ -24,17 +24,17 @@ public class Application {
 
         try {
             int sum = sumElementsArray(correctArray);
-            System.out.println("Сумма элементов массива: " + sum);
+            System.out.printf("Сумма элементов массива: %d%n", sum);
 
             sumElementsArray(incorrectSizeArray);
         } catch (AppArraySizeException | AppArrayDataException e) {
-            System.out.println("Произошла ошибка: " + e.getMessage());
+            System.err.println("Произошла ошибка: " + e.getMessage());
         }
 
         try {
             sumElementsArray(invalidDataArray);
         } catch (AppArraySizeException | AppArrayDataException e) {
-            System.out.println("Произошла ошибка: " + e.getMessage());
+            System.err.println("Произошла ошибка: " + e.getMessage());
         }
     }
 
