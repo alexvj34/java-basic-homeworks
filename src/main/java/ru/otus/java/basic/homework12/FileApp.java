@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class FileApp {
-    private static final String DIRECTORY_PATH = "D:\\Свои проекты\\javaTraining\\java-basic-homeworks\\src\\main\\resources\\Homework12Files"; // Корневой каталог проекта
+    private static final String DIRECTORY_PATH = ""; // Корневой каталог проекта
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
