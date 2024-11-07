@@ -2,14 +2,12 @@ package ru.otus.java.basic.homework20;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 
 public class WordCounter {
 
-    private static final String FILE_DIRECTORY = "D:\\Свои проекты\\javaTraining\\java-basic-homeworks\\target\\";
-
     public static void main(String[] args) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             String fileName;
             String filePath;
             File file;
@@ -17,7 +15,7 @@ public class WordCounter {
             while (true) {
                 System.out.println("Введите имя файла (например, 1.txt):");
                 fileName = reader.readLine();
-                filePath = FILE_DIRECTORY + fileName;
+                filePath = Paths.get(fileName).toString();
 
 
                 file = new File(filePath);
