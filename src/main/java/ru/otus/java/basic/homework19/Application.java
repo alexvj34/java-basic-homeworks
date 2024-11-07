@@ -9,6 +9,7 @@ public class Application {
         public static void main(String[] args) {
 
             Box<Apple> appleBox = new Box<>();
+            Box<Apple> appleBox2 = new Box<>();
             Box<Orange> orangeBox = new Box<>();
 
             appleBox.addFruit(new Apple(1.2));
@@ -21,10 +22,10 @@ public class Application {
 
             System.out.println("Коробки одинаковы по весу? " + appleBox.compare(orangeBox));
 
-            appleBox.transferFruitsTo(orangeBox);
+            appleBox.transferFruitsTo(appleBox2);
             System.out.println("После пересыпания фруктов:");
             System.out.println("Вес коробки с яблоками: " + appleBox.weight());
-            System.out.println("Вес коробки с апельсинами: " + orangeBox.weight());
+            System.out.println("Вес второй коробки с яблоками: " + appleBox2.weight());
         }
     }
 

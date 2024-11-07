@@ -1,13 +1,12 @@
 package ru.otus.java.basic.homework19.box;
 
 import ru.otus.java.basic.homework19.Fruit.Fruit;
-import ru.otus.java.basic.homework19.Fruit.Orange;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 public class Box<T extends Fruit> {
-    private ArrayList<T> fruits;
+    private List<T> fruits;
 
     public Box() {
         this.fruits = new ArrayList<>();
@@ -29,8 +28,11 @@ public class Box<T extends Fruit> {
         return this.weight() == otherBox.weight();
     }
 
-    public void transferFruitsTo(Box<Orange> otherBox) {
-        otherBox.fruits.addAll((Collection<? extends Orange>) this.fruits);
+    public void transferFruitsTo(Box<T> otherBox) {
+        if (otherBox.equals(this)) {
+            throw new RuntimeException("Не можем пересыпать в ту же коробку");
+        }
+        otherBox.fruits.addAll(this.fruits);
         this.fruits.clear();
     }
 }
